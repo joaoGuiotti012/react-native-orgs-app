@@ -1,11 +1,12 @@
-import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useEffect } from 'react'
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import useTexts from '../hooks/useTexts';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import LottieView from 'lottie-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-const sucesso = require('../assets/sucesso.png');
+const sucesso = require('../assets/animation/check-green.json');
 
 export default function Resumo() {
 
@@ -40,7 +41,16 @@ export default function Resumo() {
             </View>
 
             <View style={estilos.conteudo}>
-                <Image source={sucesso} style={estilos.sucesso} />
+                <SafeAreaView style={estilos.containerAnimation}>
+                    <LottieView
+                        resizeMode='contain'
+                        source={sucesso}
+                        style={{ width: 300 }}
+                        autoSize
+                        autoPlay
+                        loop
+                    />
+                </SafeAreaView>
 
                 <View style={estilos.textos}>
                     <Text style={estilos.titulo}>{tituloCompra}</Text>
@@ -68,6 +78,12 @@ export default function Resumo() {
 }
 
 const estilos = StyleSheet.create({
+    containerAnimation: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 40 
+    },
     tela: {
         flex: 1,
         backgroundColor: "#FFF",
