@@ -43,12 +43,12 @@ export default function Resumo() {
             <View style={estilos.conteudo}>
                 <SafeAreaView style={estilos.containerAnimation}>
                     <LottieView
+                        style={estilos.sucessoLottie}
                         resizeMode='contain'
                         source={sucesso}
-                        style={{ width: 300 }}
-                        autoSize
-                        autoPlay
-                        loop
+                        autoSize={true}
+                        autoPlay={true}
+                        loop={false}
                     />
                 </SafeAreaView>
 
@@ -82,7 +82,7 @@ const estilos = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40 
+        marginTop: 40
     },
     tela: {
         flex: 1,
@@ -126,10 +126,8 @@ const estilos = StyleSheet.create({
         zIndex: 0,
         marginBottom: 20
     },
-    sucesso: {
-        width: "100%",
-        height: undefined,
-        aspectRatio: 360 / 351,
+    sucessoLottie: {
+        width: 300,
     },
     textos: {
         paddingHorizontal: 16,

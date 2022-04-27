@@ -4,7 +4,7 @@ import {
   StatusBar,
   StyleSheet,
 } from 'react-native';
-import AppRouters from './src/Router/AppRouters';
+import AppRouters from './Router/AppRouters';
 
 const App = () => {
   return (
